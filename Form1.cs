@@ -58,17 +58,30 @@ namespace PingPong
             gameBoll.Top += speed_vertical;
 
             if (gameBoll.Left <= background.Left)
+            {
                 speed_hor *= -1;
+            }
+
 
             if (gameBoll.Right >= background.Right)
+            {
                 speed_hor *= -1;
+            }   
+
 
             if (gameBoll.Top <= background.Top)
+            {
                 speed_vertical *= -1;
+            }
+                
 
             if (gameBoll.Bottom >= background.Bottom)
-                timer.Enabled = false;
+            {
                 finishLabel.Visible = true;
+                timer.Enabled = false;
+            }
+
+
 
             if (gameBoll.Bottom >= gamePanel.Top && gameBoll.Left <= gamePanel.Right && gameBoll.Right >= gamePanel.Left)
             {
